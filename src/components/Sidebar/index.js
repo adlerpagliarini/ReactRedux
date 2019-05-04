@@ -7,8 +7,8 @@ import * as SidebarActions from '../../store/actions/sidebar';
 class index extends Component {
   render() {
 
-    const { modules, dispatch } = this.props;
-    // ao adicionar o connect nas propriedades é possível acessar a função dispatch que serve para disparar action que serão ouvidas por todos os reduces da aplicação
+    const { modules, toggleLesson } = this.props;
+
     console.log(SidebarActions);
     return (
       <aside>
@@ -19,7 +19,7 @@ class index extends Component {
                     {
                         module.lessons.map(lesson => (
                             <li key={lesson.id}>{lesson.title}
-                            <button onClick={() => dispatch(SidebarActions.toggleActionLesson(module, lesson)) }>Iniciar</button>
+                            <button onClick={() => toggleLesson(module, lesson) }>Iniciar</button>
                             </li>
                         ))
                     }
@@ -31,5 +31,11 @@ class index extends Component {
   }
 }
 
-export default connect(state => ({ modules: state.sidebarReducer.modules }))(index)
-// Recebe uma função com o estado => mapea o que eu quero deste estado
+const mapStateToProps = state => ({ modules: state.sidebarReducer.modules })
+const mapDispatchToProps = dispatch => ({
+    toggleLesson: (module, lesson) => dispatch(SidebarActions.toggleActionLesson(module, lesson))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(index)
+// Recebe uma função com o estado e posso mapear o que eu quero deste estado -> mapStateToProps
+// Recebe o dispatch na segunda função -> mapDispatchToProps
