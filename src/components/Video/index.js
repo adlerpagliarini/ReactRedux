@@ -9,6 +9,6 @@ const Video = ({activeLesson, activeModule}) => (
 );
 
 export default connect(state => ({
-    activeLesson: state.activeLesson,
-    activeModule: state.activeModule
+    activeLesson: state.sidebarReducer.activeLesson,
+    activeModule: state.sidebarReducer.activeModule
 }))(Video);

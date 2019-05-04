@@ -38,5 +38,5 @@ class index extends Component {
   }
 }
 
-export default connect(state => ({ modules: state.modules }))(index)
+export default connect(state => ({ modules: state.sidebarReducer.modules }))(index)
 // Recebe uma função com o estado => mapea o que eu quero deste estado
