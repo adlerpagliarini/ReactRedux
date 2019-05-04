@@ -2,21 +2,14 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux';
 
-class index extends Component {  
+import * as SidebarActions from '../../store/actions/sidebar';
 
-  toggleActionLesson = (module, lesson) => {
-    return {
-        type: 'TOGGLE_LESSON',
-        module,
-        lesson,
-    };
-  }
-
+class index extends Component {
   render() {
 
     const { modules, dispatch } = this.props;
     // ao adicionar o connect nas propriedades é possível acessar a função dispatch que serve para disparar action que serão ouvidas por todos os reduces da aplicação
-
+    console.log(SidebarActions);
     return (
       <aside>
           { modules.map(module => (
@@ -26,7 +19,7 @@ class index extends Component {
                     {
                         module.lessons.map(lesson => (
                             <li key={lesson.id}>{lesson.title}
-                            <button onClick={() => dispatch(this.toggleActionLesson(module, lesson)) }>Iniciar</button>
+                            <button onClick={() => dispatch(SidebarActions.toggleActionLesson(module, lesson)) }>Iniciar</button>
                             </li>
                         ))
                     }
