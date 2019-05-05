@@ -6,4 +6,4 @@
 
 # Seguindo tutorial no Youtube canal Rocketseat - [react-redux-typescript]
 <a href="https://www.youtube.com/watch?v=aTf8QTjw4RE">TypeScript com NodeJS do jeito certo!</a>
-- React, Redux, Saga middleware, Typscript
+- React, Redux, Saga middleware, Typescript
