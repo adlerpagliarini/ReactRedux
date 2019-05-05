@@ -1,0 +1,24 @@
+npx create-react-app react-redux-typescript --typescript
+
+Configuração inicial
+npm i -D 
+eslint-config-airbnb
+eslint-plugin-import
+eslint-plugin-jsx-a11y
+eslint-plugin-react
+eslint-config-prettier
+eslint-plugin-prettier
+@typescript-eslint/parser
+@typescript-eslint/eslint-plugin
+prettier
+eslint-import-resolver-typescript
+
+Adicionando Redux
+npm i react-redux redux
+npm i -D @types/react-redux
+npm i typesafe-actions
+
+Adicionando Redux com chamadas assincronas
+npm i axios
+npm i redux-saga
+npm i -D @types/redux-saga
